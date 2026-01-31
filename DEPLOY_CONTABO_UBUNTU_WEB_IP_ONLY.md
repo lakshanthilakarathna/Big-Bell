@@ -50,6 +50,11 @@ server {
   root /var/www/firbrigs;
   index index.html;
 
+  # Canonical landing URL: redirect /index.html -> /
+  location = /index.html {
+    return 301 /;
+  }
+
   # Static files
   location / {
     try_files $uri $uri/ =404;
@@ -60,7 +65,7 @@ server {
     include snippets/fastcgi-php.conf;
 
     # Choose the correct socket from: ls /run/php/
-    fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+    fastcgi_pass unix:/run/php/php8.3-fpm.sock;
   }
 
   # Basic hardening: deny hidden files
