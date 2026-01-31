@@ -1,0 +1,12 @@
+.DS_Store
+
+# Local backups / unused assets (don’t publish)
+__backup__/
+__unused__/
+
+# Composer
+vendor/
+
+# Server-side secrets (don’t commit)
+.env
+.env.*
