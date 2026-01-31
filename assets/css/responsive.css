@@ -423,6 +423,11 @@
 }
 
 @media only screen and (max-width: 599px){
+
+  /* Mobile: hide the very top header strip (tagline + social icons) */
+  .main-header .header-top{
+    display: none;
+  }
   
   .main-header .logo-box{
     display: block;
@@ -435,7 +440,10 @@
   }
 
   .main-header .logo-box .logo img{
-    max-height: 60px;
+    /* Override desktop fixed width/height to avoid distortion on mobile */
+    width: auto;
+    height: 56px;
+    max-height: 56px;
   }
 
   .main-header .support-box:before{
